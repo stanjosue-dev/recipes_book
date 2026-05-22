@@ -2,14 +2,13 @@
 
 ![](./src/img/preview.png)
 
-# 🍴 Recipes App
 
+# 🍴 Recipes App
 Une application web CRUD pour gérer ses recettes de cuisine, sans serveur ni installation.
 
 ---
 
 ## Fonctionnalités
-
 Opérations CRUD complètes sur les recettes :
 
 - **Create** — ajouter une recette (nom, ingrédients, étapes, image)
@@ -20,22 +19,21 @@ Opérations CRUD complètes sur les recettes :
 ---
 
 ## Structure du projet
-
 ```
-recipes-app/
+recipes_book/
 └── src/
-    ├── index.html   # Interface utilisateur
-    ├── style.css    # Mise en forme
-    ├── main.js      # Logique CRUD
+    ├── static.html 
+    ├── style.css   
+    ├── main.js      
     └── img/
         └── search.png
+        └── prewiew.png
 ```
 
 ---
 
 ## Lancer le projet
-
-Ouvrir `src/index.html` directement dans un navigateur. Aucune installation requise.
+Ouvrir `src/static.html` directement dans un navigateur. Aucune installation requise.
 
 ```bash
 # Optionnel : serveur local
@@ -45,14 +43,10 @@ npx serve src
 ---
 
 ## Technologies
-
-- HTML5 / CSS3
 - JavaScript vanilla
-- [Lucide Icons](https://lucide.dev) — icônes SVG open-source
-- [Fraunces + DM Sans](https://fonts.google.com) — Google Fonts
+- HTML5 / CSS
 
 ---
 
 ## Licence
-
 Projet libre — usage personnel et éducatif.

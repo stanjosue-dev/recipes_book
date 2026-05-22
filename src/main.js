@@ -4,7 +4,6 @@ const recipeView = document.querySelector('.view-recipes');
 let recipe = null;
 let storage = JSON.parse(localStorage.getItem('storage')) || [];
 
-
 class Form {
   constructor(nom,ingredients,etapes,url,id){
     this.nom = nom ;
@@ -16,7 +15,7 @@ class Form {
 };
 
 
-// PREVIEW FOR TEST AND ISUALIZE.
+// PREVIEW FOR TEST AND VISUALIZE.
 const preview = {
   nom: "Crêpes fait maison ",
   ingredients: "250 g de farine tout usage3 œufs frais500 ml de lait demi-écrémé (ou entier)2 cuillères à soupe de beurre fondu (ou d'huile de tournesol)1 pincée de sel",
@@ -34,10 +33,15 @@ function addRecipes() {
   let url = document.querySelector('.url').value.trim();
   let id = Date.now();
 
-  recipe = new Form(nom,ingredients,etapes,url,id);
-  storage.push(recipe);
-  save();
-  alert('Recette ajouté !');
+  if (nom===''|| ingredients===''|| url===''|| etapes=== ''){
+    alert('Erreur, Remplissez tous les champs.')
+  } else {
+    recipe = new Form(nom,ingredients,etapes,url,id);
+    storage.push(recipe);
+    save();
+    alert(`Votre recette ${nom} à bien été ajouté.`);
+  }
+  
 };
 
 function listRecipes() {
@@ -105,8 +109,7 @@ function editRecipes(id){
       recipe.ingredients = newIngredients;
       recipe.etapes = newEtapes;
       save();
-    }
-  })
+    }})
 };
 
 function deleteRecipe(id){
@@ -114,12 +117,24 @@ function deleteRecipe(id){
   save()
 };
 
+function searchRecipe(){
+  let wordSearched = document.querySelector('.search input').value.trim().toLowerCase();
+    let tempStorage = storage.filter(recipe => recipe.nom.toLowerCase().includes(wordSearched));
+
+  if (tempStorage.lenght === 0 || wordSearched === ''){
+    alert('Entrez une valeur de recherche valide')
+  } else {
+    let result = [];
+    tempStorage.forEach(recipe => result.push(recipe.nom));
+    alert(`recette(s) trouvée(s) contenant le mot ${wordSearched} 🔎: ` + result.join(' - '))
+  }
+  save();
+};
+
 function save(){
 localStorage.setItem('storage',JSON.stringify(storage));
 listRecipes();
 };
-
-//* function searchRecipe(){}; *// TO DO LATER
 
 
 // EVENTS
@@ -127,5 +142,7 @@ listRecipes();
 buttonAdd.addEventListener('click',()=>{
   addRecipes() ;
 });
+
+document.querySelector('.search button').addEventListener('click', searchRecipe);
 
 listRecipes();
