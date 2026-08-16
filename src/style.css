@@ -1,15 +1,15 @@
     :root {
-      --bg:       #faf7f2; 
-      --surface:  #ffffff;
-      --border:   #e5ddd3;
-      --text:     #2c2418; 
-      --muted:    #9b8f82;
-      --accent:   #c4603a;   
-      --accent-h: #a84f2e;
-      --accent-2: #fdf0eb;   
-      --radius:   8px;
-      --shadow:   0 2px 12px rgba(44,36,24,0.07);
-    }
+  --bg:       #f4f7f5;
+  --surface:  #ffffff;
+  --border:   #e2eae4;
+  --text:     #1a241f;
+  --muted:    #708277; 
+  --accent:   #2e7d46; 
+  --accent-h: #215d33;
+  --accent-2: #eaf5ed;
+  --radius:   8px;
+  --shadow:   0 4px 16px rgba(26, 36, 31, 0.05);
+}
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     body {
       font-family: 'DM Sans', sans-serif;
@@ -40,7 +40,6 @@
     }
 
     .card-title {
-      font-family: 'Fraunces', serif;
       font-size: 16px;
       font-weight: 600;
       color: var(--text);
