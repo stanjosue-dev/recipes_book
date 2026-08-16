@@ -1,6 +1,6 @@
 ## Aperçu
 
-![](./src/img/preview.png)
+![]()
 
 
 # 🍴 Recipes App
